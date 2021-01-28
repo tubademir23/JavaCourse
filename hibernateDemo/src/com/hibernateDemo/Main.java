@@ -15,7 +15,8 @@ public class Main {
 		Session session =factory.getCurrentSession();
 		try {
 			session.beginTransaction();
-			List<City> cities=session.createQuery("from City c where c.countryCode='TUR' and c.district='Ankara'").getResultList();
+			//HQL-> hibernate query language
+			List<City> cities=session.createQuery("from City c where c.countryCode='TUR' and c.name like '%A%' order by c.name desc").getResultList();
 			
 			for(City city:cities) {
 				System.out.println(city.getName());
