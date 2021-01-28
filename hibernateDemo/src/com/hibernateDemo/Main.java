@@ -16,10 +16,10 @@ public class Main {
 		try {
 			session.beginTransaction();
 			//HQL-> hibernate query language
-			List<City> cities=session.createQuery("from City c where c.countryCode='TUR' and c.name like '%A%' order by c.name desc").getResultList();
+			List<String> cities=session.createQuery("select c.countryCode from City c where c.name like 'A%' group by c.countryCode").getResultList();
 			
-			for(City city:cities) {
-				System.out.println(city.getName());
+			for(String city:cities) {
+				System.out.println(city);
 			}
 			session.getTransaction().commit();
 		}finally {
