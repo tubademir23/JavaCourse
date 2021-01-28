@@ -5,14 +5,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		//dependency injection
 		ClassPathXmlApplicationContext context=
 				new ClassPathXmlApplicationContext("applicationContext.xml");
 		
+		//add constructor_arg to bean
+		ICustomerService customerService= context.getBean("service", ICustomerService.class);
 		
-		CustomerManager manager=new CustomerManager(context.getBean("database", ICustomerDal.class));
-		manager.add();
+		customerService.add();
 	}
 
 	//IoC=Inversion of Control

@@ -1,16 +1,21 @@
 package springintro;
 
-public class CustomerManager {
+public class CustomerManager implements ICustomerService {
 
-	private ICustomerDal _customerDal;
-	public CustomerManager(ICustomerDal customerDal) {
-		this._customerDal = customerDal;
-		// TODO Auto-generated constructor stub
+	private ICustomerDal customerDal;
+		//constructor injection
+	/*public CustomerManager(ICustomerDal customerDal) {
+		this._customerDal = customerDal;	
+	}
+	 */
+	//setter injection
+	public void setCustomerDal(ICustomerDal customerDal) {
+		this.customerDal = customerDal;
 	}
 
 	public void add() {
 		// iþ kurallarý
-		_customerDal.add();
+		customerDal.add();
 		
 	}
 }
