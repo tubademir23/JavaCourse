@@ -15,6 +15,4 @@ public class Main {
 		customerService.add();
 	}
 
-	//IoC=Inversion of Control
-	//Dependency Injection
 }
