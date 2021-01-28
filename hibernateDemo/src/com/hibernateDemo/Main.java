@@ -29,10 +29,16 @@ public class Main {
 			session.save(city);
 			System.out.println("city added");
 			*/
-			City city=session.get(City.class, 4080);
+			/*
+			 * updating
+			 * City city=session.get(City.class, 4080);
 			city.setCountryCode("SUR");
-			session.getTransaction().commit();
 			System.out.println("city updated "+ city.getCountryCode());
+			*/
+			City city=session.get(City.class, 4080);
+			session.delete(city);
+			session.getTransaction().commit();
+			
 		}finally {
 			factory.close();
 		}
