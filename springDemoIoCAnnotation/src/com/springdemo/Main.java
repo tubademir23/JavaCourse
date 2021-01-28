@@ -11,9 +11,9 @@ public class Main {
 				new AnnotationConfigApplicationContext(IoCConfig.class);
 		
 		//find by context scan
-		ICustomerDal customerDal= context.getBean("database", ICustomerDal.class);
+		ICustomerService customerService = context.getBean("service", ICustomerService.class);
 		
-		customerDal.add();
+		customerService.add();
 	}
 
 }
