@@ -6,6 +6,9 @@ import javax.persistence.*;
 @Table(name="city")
 public class City {
 	
+	public City() {
+		
+	}
 	public City(int id, String name, String countryCode, String district, int population) {
 		super();
 		this.id = id;
