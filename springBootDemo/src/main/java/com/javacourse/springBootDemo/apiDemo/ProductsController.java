@@ -11,6 +11,10 @@ public class ProductsController {
 	}
 	@GetMapping("/products")
 	public String  get2() {
-		return "Laptop 2";
+		return "Products";
+	}
+	@GetMapping("/customers")
+	public String  get3() {
+		return "customers";
 	}
 }
